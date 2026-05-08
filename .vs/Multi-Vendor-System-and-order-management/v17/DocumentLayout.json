@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|solutionrelative:multi-vendor-system-and-order-management\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\multi-vendor-system-and-order-management\\admindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|solutionrelative:multi-vendor-system-and-order-management\\admindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\multi-vendor-system-and-order-management\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|solutionrelative:multi-vendor-system-and-order-management\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\multi-vendor-system-and-order-management\\admindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|solutionrelative:multi-vendor-system-and-order-management\\admindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\multi-vendor-system-and-order-management\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|solutionrelative:multi-vendor-system-and-order-management\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|e:\\semester 4\\db\\project\\multi-vendor-system-and-order-management\\multi-vendor-system-and-order-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|solutionrelative:multi-vendor-system-and-order-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC877126-17B9-41A6-95CB-42A598FF0F4B}|Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management.csproj|E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\multi-vendor-system-and-order-management\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,7 +46,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\Login.cs",
               "RelativeDocumentMoniker": "Multi-Vendor-System-and-order-management\\Login.cs",
@@ -53,7 +57,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "UC_Vendors.cs [Design]",
               "DocumentMoniker": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\UC_Vendors.cs",
               "RelativeDocumentMoniker": "Multi-Vendor-System-and-order-management\\UC_Vendors.cs",
@@ -71,30 +75,31 @@
               "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\UC_Dashboard.cs [Design]",
               "RelativeToolTip": "Multi-Vendor-System-and-order-management\\UC_Dashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T04:42:48.581Z"
+              "WhenOpened": "2026-05-08T04:42:48.581Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AdminDashboard.cs",
               "DocumentMoniker": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.cs",
               "RelativeDocumentMoniker": "Multi-Vendor-System-and-order-management\\AdminDashboard.cs",
-              "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.cs",
-              "RelativeToolTip": "Multi-Vendor-System-and-order-management\\AdminDashboard.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.cs*",
+              "RelativeToolTip": "Multi-Vendor-System-and-order-management\\AdminDashboard.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA3wEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-08T04:30:37.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AdminDashboard.Designer.cs",
               "DocumentMoniker": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.Designer.cs",
               "RelativeDocumentMoniker": "Multi-Vendor-System-and-order-management\\AdminDashboard.Designer.cs",
-              "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.Designer.cs",
-              "RelativeToolTip": "Multi-Vendor-System-and-order-management\\AdminDashboard.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.Designer.cs*",
+              "RelativeToolTip": "Multi-Vendor-System-and-order-management\\AdminDashboard.Designer.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-06T15:34:36.49Z",
               "EditorCaption": ""
@@ -105,15 +110,28 @@
               "Title": "AdminDashboard.cs [Design]",
               "DocumentMoniker": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.cs",
               "RelativeDocumentMoniker": "Multi-Vendor-System-and-order-management\\AdminDashboard.cs",
-              "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.cs [Design]",
-              "RelativeToolTip": "Multi-Vendor-System-and-order-management\\AdminDashboard.cs [Design]",
+              "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\AdminDashboard.cs [Design]*",
+              "RelativeToolTip": "Multi-Vendor-System-and-order-management\\AdminDashboard.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-06T15:34:10.374Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\Program.cs",
+              "RelativeDocumentMoniker": "Multi-Vendor-System-and-order-management\\Program.cs",
+              "ToolTip": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\Program.cs",
+              "RelativeToolTip": "Multi-Vendor-System-and-order-management\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T12:17:59.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Login.cs",
               "DocumentMoniker": "E:\\semester 4\\DB\\Project\\Multi-Vendor-System-and-order-management\\Multi-Vendor-System-and-order-management\\Login.cs",
               "RelativeDocumentMoniker": "Multi-Vendor-System-and-order-management\\Login.cs",

@@ -180,7 +180,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "AdminDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
+            this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlNavIndicator.ResumeLayout(false);

@@ -19,7 +19,7 @@ namespace Multi_Vendor_System_and_order_management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MoveIndicator(btnVendors); // Move the blue line
+           // MoveIndicator(btnVendors); // Move the blue line
             UC_Vendors uc = new UC_Vendors();
             addUserControl(uc); // Load the vendor screen
 
@@ -27,7 +27,7 @@ namespace Multi_Vendor_System_and_order_management
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            MoveIndicator(btnDashboard); // Move the blue line
+            //MoveIndicator(btnDashboard); // Move the blue line
             UC_Dashboard uc = new UC_Dashboard();
             addUserControl(uc); // Load the dashboard screen
         }
@@ -58,6 +58,11 @@ namespace Multi_Vendor_System_and_order_management
 
             // Make the clicked button dark blue/black
             btn.ForeColor = Color.FromArgb(27, 37, 89);
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.l1 = new System.Windows.Forms.Label();
             this.p1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoginButton = new System.Windows.Forms.Button();
             this.role = new System.Windows.Forms.ComboBox();
             this.password = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             // p1
             // 
             this.p1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p1.Controls.Add(this.button1);
+            this.p1.Controls.Add(this.LoginButton);
             this.p1.Controls.Add(this.role);
             this.p1.Controls.Add(this.password);
             this.p1.Controls.Add(this.email);
@@ -61,14 +61,14 @@
             resources.ApplyResources(this.p1, "p1");
             this.p1.Name = "p1";
             // 
-            // button1
+            // LoginButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(195)))));
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(195)))));
+            resources.ApplyResources(this.LoginButton, "LoginButton");
+            this.LoginButton.ForeColor = System.Drawing.Color.White;
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // role
             // 
@@ -141,7 +141,7 @@
         private System.Windows.Forms.Label l2;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.ComboBox role;
         private System.Windows.Forms.TextBox password;
     }

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Dashboard.Designer.cs">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Vendors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Vendors.Designer.cs">
+      <DependentUpon>UC_Vendors.cs</DependentUpon>
+    </Compile>
     <Compile Include="VendorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +94,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_Dashboard.resx">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Vendors.resx">
+      <DependentUpon>UC_Vendors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VendorDashboard.resx">
       <DependentUpon>VendorDashboard.cs</DependentUpon>
     </EmbeddedResource>

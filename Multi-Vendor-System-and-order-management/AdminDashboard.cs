@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +19,7 @@ namespace Multi_Vendor_System_and_order_management
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // MoveIndicator(btnVendors); // Move the blue line
+            MoveIndicator(btnVendors); // Move the blue line
             UC_Vendors uc = new UC_Vendors();
             addUserControl(uc); // Load the vendor screen
 
@@ -27,7 +27,7 @@ namespace Multi_Vendor_System_and_order_management
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            //MoveIndicator(btnDashboard); // Move the blue line
+            MoveIndicator(btnDashboard); // Move the blue line
             UC_Dashboard uc = new UC_Dashboard();
             addUserControl(uc); // Load the dashboard screen
         }
@@ -55,6 +55,7 @@ namespace Multi_Vendor_System_and_order_management
             // Optional: Make all buttons grey first
             btnDashboard.ForeColor = Color.FromArgb(163, 174, 208);
             btnVendors.ForeColor = Color.FromArgb(163, 174, 208);
+            btnReports.ForeColor = Color.FromArgb(163, 174, 208);
 
             // Make the clicked button dark blue/black
             btn.ForeColor = Color.FromArgb(27, 37, 89);
@@ -62,7 +63,53 @@ namespace Multi_Vendor_System_and_order_management
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
+            // Setup Search Box UI
+            textBox1.Text = "Search vendors...";
+            textBox1.ForeColor = Color.Gray;
+            textBox1.Font = new Font("Segoe UI", 10F);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            
+            // Attach Events
+            textBox1.GotFocus += RemoveText;
+            textBox1.LostFocus += AddText;
+            textBox1.KeyDown += TextBox1_KeyDown;
 
+            btnDashboard_Click(this, EventArgs.Empty);
+        }
+
+        private void RemoveText(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Search vendors...")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void AddText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                textBox1.Text = "Search vendors...";
+                textBox1.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                string search = textBox1.Text == "Search vendors..." ? "" : textBox1.Text;
+                
+                // Force navigate to vendors tab to show search results
+                MoveIndicator(btnVendors);
+                UC_Vendors uc = new UC_Vendors();
+                addUserControl(uc);
+                
+                // Load vendors with search query
+                uc.LoadVendors(search);
+            }
         }
     }
 }

@@ -40,6 +40,7 @@ namespace Multi_Vendor_System_and_order_management
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //database connection string
             string connectionString = "Data Source=localhost;Initial Catalog=Multi-vendor-and-order-management-system;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

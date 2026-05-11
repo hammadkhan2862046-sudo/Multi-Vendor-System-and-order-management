@@ -1,4 +1,4 @@
-﻿namespace Multi_Vendor_System_and_order_management
+namespace Multi_Vendor_System_and_order_management
 {
     partial class AdminDashboard
     {
@@ -61,6 +61,7 @@
             this.panel1.Controls.Add(this.btnVendors);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pnlNavIndicator);
+            this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -70,10 +71,9 @@
             // pnlNavIndicator
             // 
             this.pnlNavIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(195)))));
-            this.pnlNavIndicator.Controls.Add(this.btnDashboard);
-            this.pnlNavIndicator.Location = new System.Drawing.Point(3, 92);
+            this.pnlNavIndicator.Location = new System.Drawing.Point(0, 92);
             this.pnlNavIndicator.Name = "pnlNavIndicator";
-            this.pnlNavIndicator.Size = new System.Drawing.Size(205, 57);
+            this.pnlNavIndicator.Size = new System.Drawing.Size(3, 57);
             this.pnlNavIndicator.TabIndex = 4;
             // 
             // btnReports
@@ -113,7 +113,7 @@
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(254)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDashboard.Location = new System.Drawing.Point(0, 0);
+            this.btnDashboard.Location = new System.Drawing.Point(3, 92);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(205, 57);

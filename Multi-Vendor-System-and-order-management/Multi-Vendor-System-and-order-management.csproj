@@ -59,6 +59,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UC_Dashboard.cs">
@@ -73,11 +74,41 @@
     <Compile Include="UC_Vendors.Designer.cs">
       <DependentUpon>UC_Vendors.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Reports.Designer.cs">
+      <DependentUpon>UC_Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="VendorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VendorDashboard.Designer.cs">
       <DependentUpon>VendorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_VendorDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_VendorDashboard.Designer.cs">
+      <DependentUpon>UC_VendorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_VendorProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_VendorProducts.Designer.cs">
+      <DependentUpon>UC_VendorProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_VendorCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_VendorCustomers.Designer.cs">
+      <DependentUpon>UC_VendorCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_VendorOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_VendorOrders.Designer.cs">
+      <DependentUpon>UC_VendorOrders.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>

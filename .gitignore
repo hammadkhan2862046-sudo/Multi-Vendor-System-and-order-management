@@ -1,5 +1,28 @@
+# Visual Studio
 .vs/
-[Bb]in/
-[Oo]bj/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
+*.db
+*.db-shm
+*.db-wal
+
+# Build Results
+[Bb]in/
+[Oo]bj/
+
+# Temporary files
+*.tmp
+*.log
+DocumentLayout.json
+DocumentLayout.backup.json
+
+# Python (for scratch scripts)
+__pycache__/
+*.py[cod]
+
+# Project Specific
+notes
+sql-tables.txt
+scratch*/

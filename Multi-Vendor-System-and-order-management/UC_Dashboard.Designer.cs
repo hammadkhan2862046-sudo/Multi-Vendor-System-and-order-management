@@ -1,4 +1,4 @@
-﻿namespace Multi_Vendor_System_and_order_management
+namespace Multi_Vendor_System_and_order_management
 {
     partial class UC_Dashboard
     {
@@ -28,6 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
+            this.lblOrdersValue = new System.Windows.Forms.Label();
+            this.lblOrdersCompare = new System.Windows.Forms.Label();
+            this.lblSalesValue = new System.Windows.Forms.Label();
+            this.lblSalesCompare = new System.Windows.Forms.Label();
+            this.lblProductsValue = new System.Windows.Forms.Label();
+            this.lblProductsCompare = new System.Windows.Forms.Label();
+            this.lblVendorsValue = new System.Windows.Forms.Label();
+            this.lblVendorsCompare = new System.Windows.Forms.Label();
+            this.lblRevTitle = new System.Windows.Forms.Label();
+            this.lblRevChart = new System.Windows.Forms.Label();
+            this.lblRecentTitle = new System.Windows.Forms.Label();
             this.orders = new System.Windows.Forms.Panel();
             this.sales = new System.Windows.Forms.Panel();
             this.products = new System.Windows.Forms.Panel();
@@ -59,6 +71,8 @@
             // orders
             // 
             this.orders.BackColor = System.Drawing.Color.White;
+            this.orders.Controls.Add(this.lblOrdersCompare);
+            this.orders.Controls.Add(this.lblOrdersValue);
             this.orders.Controls.Add(this.pictureBox1);
             this.orders.Controls.Add(this.label1);
             this.orders.Location = new System.Drawing.Point(21, 87);
@@ -69,6 +83,8 @@
             // sales
             // 
             this.sales.BackColor = System.Drawing.Color.White;
+            this.sales.Controls.Add(this.lblSalesCompare);
+            this.sales.Controls.Add(this.lblSalesValue);
             this.sales.Controls.Add(this.pictureBox2);
             this.sales.Controls.Add(this.label3);
             this.sales.Location = new System.Drawing.Point(234, 87);
@@ -79,6 +95,8 @@
             // products
             // 
             this.products.BackColor = System.Drawing.Color.White;
+            this.products.Controls.Add(this.lblProductsCompare);
+            this.products.Controls.Add(this.lblProductsValue);
             this.products.Controls.Add(this.pictureBox3);
             this.products.Controls.Add(this.label4);
             this.products.Location = new System.Drawing.Point(445, 87);
@@ -89,6 +107,8 @@
             // vendors
             // 
             this.vendors.BackColor = System.Drawing.Color.White;
+            this.vendors.Controls.Add(this.lblVendorsCompare);
+            this.vendors.Controls.Add(this.lblVendorsValue);
             this.vendors.Controls.Add(this.pictureBox4);
             this.vendors.Controls.Add(this.label5);
             this.vendors.Location = new System.Drawing.Point(660, 87);
@@ -114,23 +134,29 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Today\'s Operations Summary";
+            this.label2.Text = "Welcome back. Here\'s a summary of your operations today.";
+            this.label2.ForeColor = System.Drawing.Color.Gray;
             // 
             // revenue_overview
             // 
             this.revenue_overview.BackColor = System.Drawing.Color.White;
-            this.revenue_overview.Location = new System.Drawing.Point(21, 241);
+            this.revenue_overview.Controls.Add(this.lblRevChart);
+            this.revenue_overview.Location = new System.Drawing.Point(21, 280);
             this.revenue_overview.Name = "revenue_overview";
-            this.revenue_overview.Size = new System.Drawing.Size(615, 397);
+            this.revenue_overview.Size = new System.Drawing.Size(615, 358);
+            this.revenue_overview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(254)))));
+            this.revenue_overview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.revenue_overview.TabIndex = 5;
             // 
             // recent
             // 
             this.recent.BackColor = System.Drawing.Color.White;
+            this.recent.Controls.Add(this.lblRecentTitle);
             this.recent.Controls.Add(this.flowLayoutPanel1);
             this.recent.Location = new System.Drawing.Point(660, 241);
             this.recent.Name = "recent";
-            this.recent.Size = new System.Drawing.Size(190, 396);
+            this.recent.Size = new System.Drawing.Size(280, 396);
+            this.recent.Location = new System.Drawing.Point(660, 241);
             this.recent.TabIndex = 6;
             // 
             // label1
@@ -179,9 +205,9 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 15);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 45);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(166, 368);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 340);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -225,6 +251,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.recent);
+            this.Controls.Add(this.lblRevTitle);
             this.Controls.Add(this.revenue_overview);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.title);
@@ -247,6 +274,129 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            
+            // 
+            // lblOrdersValue
+            // 
+            this.lblOrdersValue.AutoSize = true;
+            this.lblOrdersValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrdersValue.Location = new System.Drawing.Point(15, 40);
+            this.lblOrdersValue.Name = "lblOrdersValue";
+            this.lblOrdersValue.Size = new System.Drawing.Size(94, 45);
+            this.lblOrdersValue.TabIndex = 2;
+            this.lblOrdersValue.Text = "1,284";
+            // 
+            // lblOrdersCompare
+            // 
+            this.lblOrdersCompare.AutoSize = true;
+            this.lblOrdersCompare.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrdersCompare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(205)))), ((int)(((byte)(153)))));
+            this.lblOrdersCompare.Location = new System.Drawing.Point(20, 95);
+            this.lblOrdersCompare.Name = "lblOrdersCompare";
+            this.lblOrdersCompare.Size = new System.Drawing.Size(117, 15);
+            this.lblOrdersCompare.TabIndex = 3;
+            this.lblOrdersCompare.Text = "+12.5% vs last week";
+            
+            // 
+            // lblSalesValue
+            // 
+            this.lblSalesValue.AutoSize = true;
+            this.lblSalesValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalesValue.Location = new System.Drawing.Point(15, 40);
+            this.lblSalesValue.Name = "lblSalesValue";
+            this.lblSalesValue.Size = new System.Drawing.Size(155, 45);
+            this.lblSalesValue.TabIndex = 2;
+            this.lblSalesValue.Text = "$142,500";
+            // 
+            // lblSalesCompare
+            // 
+            this.lblSalesCompare.AutoSize = true;
+            this.lblSalesCompare.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalesCompare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(205)))), ((int)(((byte)(153)))));
+            this.lblSalesCompare.Location = new System.Drawing.Point(20, 95);
+            this.lblSalesCompare.Name = "lblSalesCompare";
+            this.lblSalesCompare.Size = new System.Drawing.Size(111, 15);
+            this.lblSalesCompare.TabIndex = 3;
+            this.lblSalesCompare.Text = "+8.2% vs last week";
+
+            // 
+            // lblProductsValue
+            // 
+            this.lblProductsValue.AutoSize = true;
+            this.lblProductsValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductsValue.Location = new System.Drawing.Point(15, 40);
+            this.lblProductsValue.Name = "lblProductsValue";
+            this.lblProductsValue.Size = new System.Drawing.Size(74, 45);
+            this.lblProductsValue.TabIndex = 2;
+            this.lblProductsValue.Text = "856";
+            // 
+            // lblProductsCompare
+            // 
+            this.lblProductsCompare.AutoSize = true;
+            this.lblProductsCompare.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductsCompare.ForeColor = System.Drawing.Color.Gray;
+            this.lblProductsCompare.Location = new System.Drawing.Point(20, 95);
+            this.lblProductsCompare.Name = "lblProductsCompare";
+            this.lblProductsCompare.Size = new System.Drawing.Size(109, 15);
+            this.lblProductsCompare.TabIndex = 3;
+            this.lblProductsCompare.Text = "+2 new this week";
+
+            // 
+            // lblVendorsValue
+            // 
+            this.lblVendorsValue.AutoSize = true;
+            this.lblVendorsValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendorsValue.Location = new System.Drawing.Point(15, 40);
+            this.lblVendorsValue.Name = "lblVendorsValue";
+            this.lblVendorsValue.Size = new System.Drawing.Size(56, 45);
+            this.lblVendorsValue.TabIndex = 2;
+            this.lblVendorsValue.Text = "42";
+            // 
+            // lblVendorsCompare
+            // 
+            this.lblVendorsCompare.AutoSize = true;
+            this.lblVendorsCompare.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendorsCompare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(205)))), ((int)(((byte)(153)))));
+            this.lblVendorsCompare.Location = new System.Drawing.Point(20, 95);
+            this.lblVendorsCompare.Name = "lblVendorsCompare";
+            this.lblVendorsCompare.Size = new System.Drawing.Size(118, 15);
+            this.lblVendorsCompare.TabIndex = 3;
+            this.lblVendorsCompare.Text = "+1 new this month";
+
+            // 
+            // lblRevTitle
+            // 
+            this.lblRevTitle.AutoSize = true;
+            this.lblRevTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRevTitle.Location = new System.Drawing.Point(20, 241);
+            this.lblRevTitle.Name = "lblRevTitle";
+            this.lblRevTitle.Size = new System.Drawing.Size(155, 21);
+            this.lblRevTitle.TabIndex = 6;
+            this.lblRevTitle.Text = "Revenue Overview";
+            // 
+            // lblRevChart
+            // 
+            this.lblRevChart.AutoSize = false;
+            this.lblRevChart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRevChart.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRevChart.ForeColor = System.Drawing.Color.Gray;
+            this.lblRevChart.Location = new System.Drawing.Point(0, 0);
+            this.lblRevChart.Name = "lblRevChart";
+            this.lblRevChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRevChart.TabIndex = 0;
+            this.lblRevChart.Text = "Chart visualization area\nusing D3.js or Chart.js";
+            // 
+            // lblRecentTitle
+            // 
+            this.lblRecentTitle.AutoSize = true;
+            this.lblRecentTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecentTitle.Location = new System.Drawing.Point(10, 10);
+            this.lblRecentTitle.Name = "lblRecentTitle";
+            this.lblRecentTitle.Size = new System.Drawing.Size(127, 21);
+            this.lblRecentTitle.TabIndex = 1;
+            this.lblRecentTitle.Text = "Recent Activity";
+
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +421,17 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+
+        private System.Windows.Forms.Label lblOrdersValue;
+        private System.Windows.Forms.Label lblOrdersCompare;
+        private System.Windows.Forms.Label lblSalesValue;
+        private System.Windows.Forms.Label lblSalesCompare;
+        private System.Windows.Forms.Label lblProductsValue;
+        private System.Windows.Forms.Label lblProductsCompare;
+        private System.Windows.Forms.Label lblVendorsValue;
+        private System.Windows.Forms.Label lblVendorsCompare;
+        private System.Windows.Forms.Label lblRevTitle;
+        private System.Windows.Forms.Label lblRevChart;
+        private System.Windows.Forms.Label lblRecentTitle;
     }
 }

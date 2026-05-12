@@ -21,7 +21,7 @@ namespace Multi_Vendor_System_and_order_management
 
         private void LoadDashboardData()
         {
-            string connectionString = "Data Source=localhost;Initial Catalog=Multi-vendor-and-order-management-system;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
+            string connectionString = DatabaseConfig.ConnectionString;
             
             try
             {

@@ -215,10 +215,11 @@ namespace Multi_Vendor_System_and_order_management
             this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.add.ForeColor = System.Drawing.Color.White;
-            this.add.Location = new System.Drawing.Point(24, 344);
+            this.add.Location = new System.Drawing.Point(25, 340);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 0;
+            this.add.Size = new System.Drawing.Size(250, 40);
+            this.add.TabIndex = 12;
+            this.add.Text = "Add Vendor";
             this.add.UseVisualStyleBackColor = false;
             // 
             // update
@@ -229,10 +230,11 @@ namespace Multi_Vendor_System_and_order_management
             this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(195)))));
-            this.update.Location = new System.Drawing.Point(167, 345);
+            this.update.Location = new System.Drawing.Point(155, 395);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 1;
+            this.update.Size = new System.Drawing.Size(120, 35);
+            this.update.TabIndex = 13;
+            this.update.Text = "Update";
             this.update.UseVisualStyleBackColor = false;
             // 
             // delete
@@ -243,10 +245,11 @@ namespace Multi_Vendor_System_and_order_management
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.delete.Location = new System.Drawing.Point(76, 429);
+            this.delete.Location = new System.Drawing.Point(25, 395);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 2;
+            this.delete.Size = new System.Drawing.Size(120, 35);
+            this.delete.TabIndex = 14;
+            this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = false;
             // 
             // address

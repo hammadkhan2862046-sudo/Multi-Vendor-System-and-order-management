@@ -16,7 +16,7 @@ namespace Multi_Vendor_System_and_order_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminDashboard());
+            Application.Run(new Login());
         }
     }
 }

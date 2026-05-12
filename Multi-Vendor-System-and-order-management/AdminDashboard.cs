@@ -39,6 +39,13 @@ namespace Multi_Vendor_System_and_order_management
             userControl.BringToFront();
         }
 
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            MoveIndicator(btnReports);
+            UC_Reports uc = new UC_Reports();
+            addUserControl(uc);
+        }
+
         private void pnlContent_Paint(object sender, PaintEventArgs e)
         {
 
@@ -73,6 +80,7 @@ namespace Multi_Vendor_System_and_order_management
             textBox1.GotFocus += RemoveText;
             textBox1.LostFocus += AddText;
             textBox1.KeyDown += TextBox1_KeyDown;
+            textBox1.TextChanged += TextBox1_TextChanged;
 
             btnDashboard_Click(this, EventArgs.Empty);
         }
@@ -100,16 +108,50 @@ namespace Multi_Vendor_System_and_order_management
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-                string search = textBox1.Text == "Search vendors..." ? "" : textBox1.Text;
-                
-                // Force navigate to vendors tab to show search results
-                MoveIndicator(btnVendors);
-                UC_Vendors uc = new UC_Vendors();
-                addUserControl(uc);
-                
-                // Load vendors with search query
-                uc.LoadVendors(search);
+                PerformSearch();
             }
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            // Only search as they type if the textbox is actually focused
+            // to avoid triggering when we programmatically set the placeholder text
+            if (textBox1.ContainsFocus && textBox1.Text != "Search vendors...")
+            {
+                PerformSearch();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+
+        private void PerformSearch()
+        {
+            string search = textBox1.Text == "Search vendors..." ? "" : textBox1.Text;
+            
+            // Check if current view is already UC_Vendors
+            UC_Vendors activeVendorControl = pnlContent.Controls.OfType<UC_Vendors>().FirstOrDefault();
+
+            if (activeVendorControl == null)
+            {
+                // We are not on the vendors tab. Switch to it safely.
+                MoveIndicator(btnVendors);
+                activeVendorControl = new UC_Vendors();
+                addUserControl(activeVendorControl);
+            }
+
+            // Perform the search efficiently without recreating the control
+            activeVendorControl.LoadVendors(search);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.FormClosed += (s, args) => this.Close();
+            login.Show();
         }
     }
 }

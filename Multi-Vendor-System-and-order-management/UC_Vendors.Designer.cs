@@ -41,6 +41,10 @@ namespace Multi_Vendor_System_and_order_management
             this.label6 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.add = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
@@ -131,7 +135,7 @@ namespace Multi_Vendor_System_and_order_management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(22, 60);
+            this.label3.Location = new System.Drawing.Point(22, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 15);
             this.label3.TabIndex = 4;
@@ -142,7 +146,7 @@ namespace Multi_Vendor_System_and_order_management
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(22, 120);
+            this.label4.Location = new System.Drawing.Point(22, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 15);
             this.label4.TabIndex = 5;
@@ -153,18 +157,40 @@ namespace Multi_Vendor_System_and_order_management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(22, 180);
+            this.label5.Location = new System.Drawing.Point(22, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 15);
             this.label5.TabIndex = 6;
             this.label5.Text = "Vendor Phone Number";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblUsername.ForeColor = System.Drawing.Color.Gray;
+            this.lblUsername.Location = new System.Drawing.Point(22, 195);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(60, 15);
+            this.lblUsername.TabIndex = 15;
+            this.lblUsername.Text = "Username";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblPassword.ForeColor = System.Drawing.Color.Gray;
+            this.lblPassword.Location = new System.Drawing.Point(22, 245);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(57, 15);
+            this.lblPassword.TabIndex = 16;
+            this.lblPassword.Text = "Password";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(22, 240);
+            this.label6.Location = new System.Drawing.Point(22, 295);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 15);
             this.label6.TabIndex = 7;
@@ -173,7 +199,7 @@ namespace Multi_Vendor_System_and_order_management
             // name
             // 
             this.name.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.name.Location = new System.Drawing.Point(25, 80);
+            this.name.Location = new System.Drawing.Point(25, 65);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(250, 25);
             this.name.TabIndex = 8;
@@ -181,15 +207,34 @@ namespace Multi_Vendor_System_and_order_management
             // email
             // 
             this.email.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.email.Location = new System.Drawing.Point(25, 140);
+            this.email.Location = new System.Drawing.Point(25, 115);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(250, 25);
             this.email.TabIndex = 9;
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtUsername.Location = new System.Drawing.Point(25, 215);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(250, 25);
+            this.txtUsername.TabIndex = 10;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPassword.Location = new System.Drawing.Point(25, 265);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(250, 25);
+            this.txtPassword.TabIndex = 11;
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtPassword);
+            this.panel1.Controls.Add(this.txtUsername);
+            this.panel1.Controls.Add(this.lblPassword);
+            this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.add);
             this.panel1.Controls.Add(this.update);
             this.panel1.Controls.Add(this.delete);
@@ -215,10 +260,10 @@ namespace Multi_Vendor_System_and_order_management
             this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.add.ForeColor = System.Drawing.Color.White;
-            this.add.Location = new System.Drawing.Point(25, 340);
+            this.add.Location = new System.Drawing.Point(25, 380);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(250, 40);
-            this.add.TabIndex = 12;
+            this.add.TabIndex = 13;
             this.add.Text = "Add Vendor";
             this.add.UseVisualStyleBackColor = false;
             // 
@@ -230,10 +275,10 @@ namespace Multi_Vendor_System_and_order_management
             this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(195)))));
-            this.update.Location = new System.Drawing.Point(155, 395);
+            this.update.Location = new System.Drawing.Point(155, 435);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(120, 35);
-            this.update.TabIndex = 13;
+            this.update.TabIndex = 14;
             this.update.Text = "Update";
             this.update.UseVisualStyleBackColor = false;
             // 
@@ -245,26 +290,26 @@ namespace Multi_Vendor_System_and_order_management
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.delete.Location = new System.Drawing.Point(25, 395);
+            this.delete.Location = new System.Drawing.Point(25, 435);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(120, 35);
-            this.delete.TabIndex = 14;
+            this.delete.TabIndex = 15;
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = false;
             // 
             // address
             // 
             this.address.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.address.Location = new System.Drawing.Point(25, 260);
+            this.address.Location = new System.Drawing.Point(25, 315);
             this.address.Multiline = true;
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(250, 50);
-            this.address.TabIndex = 11;
+            this.address.TabIndex = 12;
             // 
             // phone
             // 
             this.phone.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.phone.Location = new System.Drawing.Point(25, 200);
+            this.phone.Location = new System.Drawing.Point(25, 165);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(250, 25);
             this.phone.TabIndex = 10;
@@ -302,6 +347,10 @@ namespace Multi_Vendor_System_and_order_management
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.TextBox phone;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button delete;

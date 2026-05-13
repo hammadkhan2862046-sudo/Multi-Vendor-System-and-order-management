@@ -346,5 +346,19 @@ namespace Multi_Vendor_System_and_order_management
             active.BackColor = Color.FromArgb(0, 80, 200);
             active.ForeColor = Color.White;
         }
+
+        // ── Create Test Order ────────────────────────────────────────────────
+        private void btnCreateTestOrder_Click(object sender, EventArgs e)
+        {
+            using (var form = new CreateOrderForm(_vendorId))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    // Order was created successfully, refresh the display
+                    LoadSummary();
+                    LoadOrders(_currentFilter);
+                }
+            }
+        }
     }
 }

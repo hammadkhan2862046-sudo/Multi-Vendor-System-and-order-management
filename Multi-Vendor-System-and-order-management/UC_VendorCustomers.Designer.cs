@@ -33,8 +33,6 @@ namespace Multi_Vendor_System_and_order_management
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlCustomerDirectory = new System.Windows.Forms.Panel();
             this.lblDirectoryTitle = new System.Windows.Forms.Label();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.btnDownload = new System.Windows.Forms.Button();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.pnlCustomerDetails.SuspendLayout();
             this.pnlCustomerDirectory.SuspendLayout();
@@ -178,8 +176,6 @@ namespace Multi_Vendor_System_and_order_management
             // pnlCustomerDirectory
             this.pnlCustomerDirectory.BackColor = System.Drawing.Color.White;
             this.pnlCustomerDirectory.Controls.Add(this.lblDirectoryTitle);
-            this.pnlCustomerDirectory.Controls.Add(this.btnFilter);
-            this.pnlCustomerDirectory.Controls.Add(this.btnDownload);
             this.pnlCustomerDirectory.Controls.Add(this.dgvCustomers);
             this.pnlCustomerDirectory.Location = new System.Drawing.Point(296, 90);
             this.pnlCustomerDirectory.Name = "pnlCustomerDirectory";
@@ -192,17 +188,7 @@ namespace Multi_Vendor_System_and_order_management
             this.lblDirectoryTitle.Name = "lblDirectoryTitle";
             this.lblDirectoryTitle.Text = "Customer Directory";
             
-            // btnFilter
-            this.btnFilter.Location = new System.Drawing.Point(400, 15);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(40, 23);
-            this.btnFilter.Text = "F";
-            
-            // btnDownload
-            this.btnDownload.Location = new System.Drawing.Point(450, 15);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(40, 23);
-            this.btnDownload.Text = "DL";
+
             
             // dgvCustomers
             this.dgvCustomers.BackgroundColor = System.Drawing.Color.White;
@@ -248,8 +234,7 @@ namespace Multi_Vendor_System_and_order_management
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlCustomerDirectory;
         private System.Windows.Forms.Label lblDirectoryTitle;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.Button btnDownload;
+
         private System.Windows.Forms.DataGridView dgvCustomers;
     }
 }

@@ -18,6 +18,7 @@ namespace Multi_Vendor_System_and_order_management
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
+            this.btnCreateTestOrder = new System.Windows.Forms.Button();
             this.pnlTotalOrders = new System.Windows.Forms.Panel();
             this.lblTotalOrdersTitle = new System.Windows.Forms.Label();
             this.lblTotalOrdersCount = new System.Windows.Forms.Label();
@@ -70,7 +71,20 @@ namespace Multi_Vendor_System_and_order_management
             this.btnUpdateStatus.UseVisualStyleBackColor = false;
             this.btnUpdateStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateStatus.Click += new System.EventHandler(this.btnUpdateStatus_Click);
-            
+
+            // btnCreateTestOrder
+            this.btnCreateTestOrder.BackColor = System.Drawing.Color.FromArgb(76, 175, 80);
+            this.btnCreateTestOrder.ForeColor = System.Drawing.Color.White;
+            this.btnCreateTestOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateTestOrder.FlatAppearance.BorderSize = 0;
+            this.btnCreateTestOrder.Location = new System.Drawing.Point(520, 25);
+            this.btnCreateTestOrder.Name = "btnCreateTestOrder";
+            this.btnCreateTestOrder.Size = new System.Drawing.Size(130, 30);
+            this.btnCreateTestOrder.Text = "Create Test Order";
+            this.btnCreateTestOrder.UseVisualStyleBackColor = false;
+            this.btnCreateTestOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateTestOrder.Click += new System.EventHandler(this.btnCreateTestOrder_Click);
+
             // pnlTotalOrders
             this.pnlTotalOrders.BackColor = System.Drawing.Color.White;
             this.pnlTotalOrders.Controls.Add(this.lblTotalOrdersCount);
@@ -205,6 +219,7 @@ namespace Multi_Vendor_System_and_order_management
             this.Controls.Add(this.pnlTotalRevenue);
             this.Controls.Add(this.pnlPendingOrders);
             this.Controls.Add(this.pnlTotalOrders);
+            this.Controls.Add(this.btnCreateTestOrder);
             this.Controls.Add(this.btnUpdateStatus);
             this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.lblTitle);
@@ -225,6 +240,7 @@ namespace Multi_Vendor_System_and_order_management
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Button btnUpdateStatus;
+        private System.Windows.Forms.Button btnCreateTestOrder;
         private System.Windows.Forms.Panel pnlTotalOrders;
         private System.Windows.Forms.Label lblTotalOrdersTitle;
         private System.Windows.Forms.Label lblTotalOrdersCount;

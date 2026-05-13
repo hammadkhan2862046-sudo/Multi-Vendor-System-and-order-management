@@ -20,7 +20,12 @@ namespace Multi_Vendor_System_and_order_management
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Hide the password characters with dots
+            password.PasswordChar = '●';
 
+            // Pre-select "Vendor" in the role dropdown (index 1 = Vendor)
+            if (role.Items.Count > 1)
+                role.SelectedIndex = 1;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,0 +1,192 @@
+TABLE_NAME	COLUMN_NAME	DATA_TYPE
+Categories	CategoryID	int
+Categories	CategoryName	nvarchar
+Categories	Description	nvarchar
+Customers	CustomerID	int
+Customers	FullName	nvarchar
+Customers	Email	nvarchar
+Customers	Phone	nvarchar
+Customers	ShippingAddress	nvarchar
+InventoryLogs	LogID	int
+InventoryLogs	ProductID	int
+InventoryLogs	QuantityChanged	int
+InventoryLogs	ChangeReason	nvarchar
+InventoryLogs	LogDate	datetime
+OrderDetails	OrderDetailID	int
+OrderDetails	OrderID	int
+OrderDetails	ProductID	int
+OrderDetails	Quantity	int
+OrderDetails	UnitPrice	decimal
+Orders	OrderID	int
+Orders	CustomerID	int
+Orders	ShippingMethodID	int
+Orders	TotalAmount	decimal
+Orders	OrderStatus	nvarchar
+Orders	OrderDate	datetime
+Payments	PaymentID	int
+Payments	OrderID	int
+Payments	PaymentStatus	nvarchar
+Payments	PaymentDate	datetime
+ProductReviews	ReviewID	int
+ProductReviews	ProductID	int
+ProductReviews	CustomerID	int
+ProductReviews	Rating	int
+ProductReviews	Comment	nvarchar
+ProductReviews	ReviewDate	datetime
+Products	ProductID	int
+Products	VendorID	int
+Products	CategoryID	int
+Products	ProductName	nvarchar
+Products	Price	decimal
+Products	StockQuantity	int
+Products	IsActive	bit
+ShippingMethods	ShippingMethodID	int
+ShippingMethods	MethodName	nvarchar
+ShippingMethods	Cost	decimal
+ShippingMethods	EstimatedDeliveryDays	int
+Users	UserID	int
+Users	Username	nvarchar
+Users	Password	nvarchar
+Users	UserRole	nvarchar
+Vendors	VendorID	int
+Vendors	UserID	int
+Vendors	VendorName	nvarchar
+Vendors	Email	nvarchar
+Vendors	Phone	nvarchar
+Vendors	PhysicalAddress	nvarchar
+
+
+
+ForeignKey	ParentTable	ParentColumn	ReferencedTable	ReferencedColumn
+FK__Vendors__UserID__619B8048	Vendors	UserID	Users	UserID
+FK__Products__Catego__693CA210	Products	CategoryID	Categories	CategoryID
+FK__Orders__Shipping__6EF57B66	Orders	ShippingMethodID	ShippingMethods	ShippingMethodID
+FK__Products__Vendor__68487DD7	Products	VendorID	Vendors	VendorID
+FK__Orders__Customer__6E01572D	Orders	CustomerID	Customers	CustomerID
+FK__ProductRe__Custo__7D439ABD	ProductReviews	CustomerID	Customers	CustomerID
+FK__Inventory__Produ__02084FDA	InventoryLogs	ProductID	Products	ProductID
+FK__OrderDeta__Produ__74AE54BC	OrderDetails	ProductID	Products	ProductID
+FK__ProductRe__Produ__7C4F7684	ProductReviews	ProductID	Products	ProductID
+FK__OrderDeta__Order__73BA3083	OrderDetails	OrderID	Orders	OrderID
+FK__Payments__OrderI__787EE5A0	Payments	OrderID	Orders	OrderID
+
+
+
+
+-- ==========================================
+-- 1. INDEPENDENT TABLES (No Foreign Keys)
+-- ==========================================
+
+-- USERS TABLE (Handles Authentication & Roles)
+CREATE TABLE Users (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(50),
+    Password NVARCHAR(50),
+    UserRole NVARCHAR(20) -- This will store 'Admin' or 'Vendor'
+);
+
+
+
+-- CATEGORIES TABLE (Organizes Products)
+CREATE TABLE Categories (
+    CategoryID INT IDENTITY(1,1) PRIMARY KEY,
+    CategoryName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(255)
+);
+
+-- SHIPPING METHODS TABLE (Delivery Options)
+CREATE TABLE ShippingMethods (
+    ShippingMethodID INT IDENTITY(1,1) PRIMARY KEY,
+    MethodName NVARCHAR(100) NOT NULL,
+    Cost DECIMAL(18,2) NOT NULL,
+    EstimatedDeliveryDays INT
+);
+
+-- ==========================================
+-- 2. FIRST-LEVEL DEPENDENT TABLES 
+-- ==========================================
+
+-- VENDORS TABLE (Stores vendor profile info)
+CREATE TABLE Vendors (
+    VendorID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT UNIQUE FOREIGN KEY REFERENCES Users(UserID),
+    VendorName NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100),
+    Phone NVARCHAR(20),
+    PhysicalAddress NVARCHAR(255)
+);
+
+-- CUSTOMERS TABLE (Stores customer profile info)
+CREATE TABLE Customers (
+    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT UNIQUE FOREIGN KEY REFERENCES Users(UserID),
+    FullName NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100),
+    Phone NVARCHAR(20),
+    ShippingAddress NVARCHAR(255)
+);
+
+-- ==========================================
+-- 3. SECOND-LEVEL DEPENDENT TABLES
+-- ==========================================
+
+-- PRODUCTS TABLE (Linked to Vendors and Categories)
+CREATE TABLE Products (
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
+    VendorID INT FOREIGN KEY REFERENCES Vendors(VendorID),
+    CategoryID INT FOREIGN KEY REFERENCES Categories(CategoryID),
+    ProductName NVARCHAR(150) NOT NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    StockQuantity INT NOT NULL DEFAULT 0,
+    IsActive BIT DEFAULT 1 
+);
+
+-- ORDERS TABLE (Linked to Customers and Shipping Methods)
+CREATE TABLE Orders (
+    OrderID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT FOREIGN KEY REFERENCES Customers(CustomerID),
+    ShippingMethodID INT FOREIGN KEY REFERENCES ShippingMethods(ShippingMethodID),
+    TotalAmount DECIMAL(18,2) NOT NULL,
+    OrderStatus NVARCHAR(50) DEFAULT 'Pending', -- Pending, Shipped, Delivered, Cancelled
+    OrderDate DATETIME DEFAULT GETDATE()
+);
+
+-- ==========================================
+-- 4. THIRD-LEVEL DEPENDENT TABLES
+-- ==========================================
+
+-- ORDER DETAILS TABLE (The bridge between Orders and Products)
+CREATE TABLE OrderDetails (
+    OrderDetailID INT IDENTITY(1,1) PRIMARY KEY,
+    OrderID INT FOREIGN KEY REFERENCES Orders(OrderID),
+    ProductID INT FOREIGN KEY REFERENCES Products(ProductID),
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(18,2) NOT NULL 
+);
+
+-- PAYMENTS TABLE (Linked to Orders)
+CREATE TABLE Payments (
+    PaymentID INT IDENTITY(1,1) PRIMARY KEY,
+    OrderID INT UNIQUE FOREIGN KEY REFERENCES Orders(OrderID),
+    PaymentStatus NVARCHAR(50) DEFAULT 'Unpaid', -- Paid, Unpaid
+    PaymentDate DATETIME
+);
+
+-- PRODUCT REVIEWS TABLE (Linked to Products and Customers)
+CREATE TABLE ProductReviews (
+    ReviewID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductID INT FOREIGN KEY REFERENCES Products(ProductID),
+    CustomerID INT FOREIGN KEY REFERENCES Customers(CustomerID),
+    Rating INT CHECK (Rating >= 1 AND Rating <= 5) NOT NULL,
+    Comment NVARCHAR(1000),
+    ReviewDate DATETIME DEFAULT GETDATE()
+);
+
+-- INVENTORY LOGS TABLE (Linked to Products)
+CREATE TABLE InventoryLogs (
+    LogID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductID INT FOREIGN KEY REFERENCES Products(ProductID),
+    QuantityChanged INT NOT NULL, 
+    ChangeReason NVARCHAR(50) NOT NULL, 
+    LogDate DATETIME DEFAULT GETDATE()
+);

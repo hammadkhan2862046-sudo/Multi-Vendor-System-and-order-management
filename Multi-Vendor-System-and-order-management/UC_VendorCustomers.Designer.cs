@@ -29,6 +29,7 @@ namespace Multi_Vendor_System_and_order_management
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlCustomerDirectory = new System.Windows.Forms.Panel();
             this.lblDirectoryTitle = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@ namespace Multi_Vendor_System_and_order_management
             this.pnlCustomerDetails.Controls.Add(this.txtAddress);
             this.pnlCustomerDetails.Controls.Add(this.btnAddCustomer);
             this.pnlCustomerDetails.Controls.Add(this.btnUpdate);
+            this.pnlCustomerDetails.Controls.Add(this.btnDelete);
             this.pnlCustomerDetails.Controls.Add(this.btnClear);
             this.pnlCustomerDetails.Location = new System.Drawing.Point(26, 90);
             this.pnlCustomerDetails.Name = "pnlCustomerDetails";
@@ -138,16 +140,40 @@ namespace Multi_Vendor_System_and_order_management
             this.btnAddCustomer.UseVisualStyleBackColor = false;
             
             // btnUpdate
-            this.btnUpdate.Location = new System.Drawing.Point(20, 390);
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.Location = new System.Drawing.Point(20, 395);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(95, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(92, 30);
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            
+            // btnDelete
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(238)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.Location = new System.Drawing.Point(118, 395);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(50, 30);
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             
             // btnClear
-            this.btnClear.Location = new System.Drawing.Point(125, 390);
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClear.Location = new System.Drawing.Point(173, 395);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(95, 30);
+            this.btnClear.Size = new System.Drawing.Size(47, 30);
             this.btnClear.Text = "Clear";
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             
             // pnlCustomerDirectory
             this.pnlCustomerDirectory.BackColor = System.Drawing.Color.White;
@@ -183,6 +209,7 @@ namespace Multi_Vendor_System_and_order_management
             this.dgvCustomers.Location = new System.Drawing.Point(20, 50);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.Size = new System.Drawing.Size(480, 410);
+            this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
             
             // UC_VendorCustomers
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +244,7 @@ namespace Multi_Vendor_System_and_order_management
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlCustomerDirectory;
         private System.Windows.Forms.Label lblDirectoryTitle;

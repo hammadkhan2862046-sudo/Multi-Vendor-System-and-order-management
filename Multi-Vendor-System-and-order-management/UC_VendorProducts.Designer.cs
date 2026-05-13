@@ -29,6 +29,9 @@ namespace Multi_Vendor_System_and_order_management
             this.lblStock           = new System.Windows.Forms.Label();
             this.txtStock           = new System.Windows.Forms.TextBox();
             this.btnAddProduct      = new System.Windows.Forms.Button();
+            this.btnUpdateProduct   = new System.Windows.Forms.Button();
+            this.btnDeleteProduct   = new System.Windows.Forms.Button();
+            this.btnClearProduct    = new System.Windows.Forms.Button();
 
             // ── Category dropdown (needed for FK) ─────────────────────
             this.lblCategory        = new System.Windows.Forms.Label();
@@ -86,9 +89,12 @@ namespace Multi_Vendor_System_and_order_management
             this.pnlQuickAdd.Controls.Add(this.lblCategory);
             this.pnlQuickAdd.Controls.Add(this.cmbCategory);
             this.pnlQuickAdd.Controls.Add(this.btnAddProduct);
+            this.pnlQuickAdd.Controls.Add(this.btnUpdateProduct);
+            this.pnlQuickAdd.Controls.Add(this.btnDeleteProduct);
+            this.pnlQuickAdd.Controls.Add(this.btnClearProduct);
             this.pnlQuickAdd.Location   = new System.Drawing.Point(30, 104);
             this.pnlQuickAdd.Name       = "pnlQuickAdd";
-            this.pnlQuickAdd.Size       = new System.Drawing.Size(790, 130);
+            this.pnlQuickAdd.Size       = new System.Drawing.Size(790, 140);
             this.pnlQuickAdd.TabIndex   = 3;
 
             // lblQuickAddTitle
@@ -175,13 +181,54 @@ namespace Multi_Vendor_System_and_order_management
             this.btnAddProduct.Font        = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnAddProduct.ForeColor   = System.Drawing.Color.White;
             this.btnAddProduct.Cursor      = System.Windows.Forms.Cursors.Hand;
-            this.btnAddProduct.Location    = new System.Drawing.Point(695, 62);
+            this.btnAddProduct.Location    = new System.Drawing.Point(18, 100);
             this.btnAddProduct.Name        = "btnAddProduct";
-            this.btnAddProduct.Size        = new System.Drawing.Size(80, 34);
+            this.btnAddProduct.Size        = new System.Drawing.Size(80, 30);
             this.btnAddProduct.TabIndex    = 10;
             this.btnAddProduct.Text        = "+ Add";
             this.btnAddProduct.UseVisualStyleBackColor = false;
             this.btnAddProduct.Click       += new System.EventHandler(this.btnAddProduct_Click);
+
+            // Update Product button
+            this.btnUpdateProduct.BackColor = System.Drawing.Color.FromArgb(230, 240, 255);
+            this.btnUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateProduct.FlatAppearance.BorderSize = 0;
+            this.btnUpdateProduct.Font      = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUpdateProduct.ForeColor = System.Drawing.Color.FromArgb(0, 80, 200);
+            this.btnUpdateProduct.Cursor    = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdateProduct.Location  = new System.Drawing.Point(108, 100);
+            this.btnUpdateProduct.Name      = "btnUpdateProduct";
+            this.btnUpdateProduct.Size      = new System.Drawing.Size(80, 30);
+            this.btnUpdateProduct.Text      = "Update";
+            this.btnUpdateProduct.UseVisualStyleBackColor = false;
+            this.btnUpdateProduct.Click     += new System.EventHandler(this.btnUpdateProduct_Click);
+
+            // Delete Product button
+            this.btnDeleteProduct.BackColor = System.Drawing.Color.FromArgb(255, 235, 238);
+            this.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteProduct.FlatAppearance.BorderSize = 0;
+            this.btnDeleteProduct.Font      = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteProduct.ForeColor = System.Drawing.Color.FromArgb(211, 47, 47);
+            this.btnDeleteProduct.Cursor    = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteProduct.Location  = new System.Drawing.Point(198, 100);
+            this.btnDeleteProduct.Name      = "btnDeleteProduct";
+            this.btnDeleteProduct.Size      = new System.Drawing.Size(80, 30);
+            this.btnDeleteProduct.Text      = "Delete";
+            this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Click     += new System.EventHandler(this.btnDeleteProduct_Click);
+
+            // Clear / Reset button
+            this.btnClearProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearProduct.FlatAppearance.BorderSize = 0;
+            this.btnClearProduct.Font      = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnClearProduct.ForeColor = System.Drawing.Color.FromArgb(80, 80, 80);
+            this.btnClearProduct.Cursor    = System.Windows.Forms.Cursors.Hand;
+            this.btnClearProduct.Location  = new System.Drawing.Point(288, 100);
+            this.btnClearProduct.Name      = "btnClearProduct";
+            this.btnClearProduct.Size      = new System.Drawing.Size(60, 30);
+            this.btnClearProduct.Text      = "Clear";
+            this.btnClearProduct.UseVisualStyleBackColor = true;
+            this.btnClearProduct.Click     += new System.EventHandler(this.btnClearProduct_Click);
 
             // ── pnlInventory ──────────────────────────────────────────────
             this.pnlInventory.BackColor   = System.Drawing.Color.White;
@@ -192,7 +239,7 @@ namespace Multi_Vendor_System_and_order_management
             this.pnlInventory.Controls.Add(this.lblShowingCount);
             this.pnlInventory.Controls.Add(this.btnPrev);
             this.pnlInventory.Controls.Add(this.btnNext);
-            this.pnlInventory.Location   = new System.Drawing.Point(30, 254);
+            this.pnlInventory.Location   = new System.Drawing.Point(30, 264);
             this.pnlInventory.Name       = "pnlInventory";
             this.pnlInventory.Size       = new System.Drawing.Size(790, 400);
             this.pnlInventory.TabIndex   = 4;
@@ -229,11 +276,13 @@ namespace Multi_Vendor_System_and_order_management
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.ReadOnly             = true;
             this.dgvInventory.SelectionMode        = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInventory.MultiSelect          = false;
             this.dgvInventory.Location             = new System.Drawing.Point(0, 55);
             this.dgvInventory.Name                 = "dgvInventory";
             this.dgvInventory.Size                 = new System.Drawing.Size(788, 296);
             this.dgvInventory.TabIndex             = 20;
             this.dgvInventory.ScrollBars           = System.Windows.Forms.ScrollBars.None;
+            this.dgvInventory.CellClick            += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
 
             // Footer row
             this.lblShowingCount.AutoSize  = true;
@@ -306,12 +355,15 @@ namespace Multi_Vendor_System_and_order_management
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button  btnAddProduct;
 
-        private System.Windows.Forms.Panel         pnlInventory;
-        private System.Windows.Forms.Label         lblInventoryTitle;
-        private System.Windows.Forms.Button        btnFilter;
+        private System.Windows.Forms.Panel   pnlInventory;
+        private System.Windows.Forms.Label   lblInventoryTitle;
+        private System.Windows.Forms.Button  btnFilter;
         private System.Windows.Forms.DataGridView  dgvInventory;
-        private System.Windows.Forms.Label         lblShowingCount;
-        private System.Windows.Forms.Button        btnPrev;
-        private System.Windows.Forms.Button        btnNext;
+        private System.Windows.Forms.Label   lblShowingCount;
+        private System.Windows.Forms.Button  btnPrev;
+        private System.Windows.Forms.Button  btnNext;
+        private System.Windows.Forms.Button  btnUpdateProduct;
+        private System.Windows.Forms.Button  btnDeleteProduct;
+        private System.Windows.Forms.Button  btnClearProduct;
     }
 }

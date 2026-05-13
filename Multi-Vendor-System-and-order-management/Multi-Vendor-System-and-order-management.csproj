@@ -110,6 +110,12 @@
     <Compile Include="UC_VendorOrders.Designer.cs">
       <DependentUpon>UC_VendorOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_SearchResults.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SearchResults.Designer.cs">
+      <DependentUpon>UC_SearchResults.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VendorDashboard.resx">
       <DependentUpon>VendorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SearchResults.resx">
+      <DependentUpon>UC_SearchResults.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

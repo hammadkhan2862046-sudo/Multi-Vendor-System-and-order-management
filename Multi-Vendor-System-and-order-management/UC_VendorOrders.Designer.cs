@@ -17,8 +17,7 @@ namespace Multi_Vendor_System_and_order_management
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnNewOrder = new System.Windows.Forms.Button();
+            this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.pnlTotalOrders = new System.Windows.Forms.Panel();
             this.lblTotalOrdersTitle = new System.Windows.Forms.Label();
             this.lblTotalOrdersCount = new System.Windows.Forms.Label();
@@ -59,21 +58,18 @@ namespace Multi_Vendor_System_and_order_management
             this.lblSubtitle.Size = new System.Drawing.Size(350, 19);
             this.lblSubtitle.Text = "Overview and processing of all incoming vendor orders.";
             
-            // btnExport
-            this.btnExport.Location = new System.Drawing.Point(620, 25);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(80, 30);
-            this.btnExport.Text = "Export";
-            
-            // btnNewOrder
-            this.btnNewOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(89)))), ((int)(((byte)(248)))));
-            this.btnNewOrder.ForeColor = System.Drawing.Color.White;
-            this.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewOrder.Location = new System.Drawing.Point(710, 25);
-            this.btnNewOrder.Name = "btnNewOrder";
-            this.btnNewOrder.Size = new System.Drawing.Size(100, 30);
-            this.btnNewOrder.Text = "+ New Order";
-            this.btnNewOrder.UseVisualStyleBackColor = false;
+            // btnUpdateStatus
+            this.btnUpdateStatus.BackColor = System.Drawing.Color.FromArgb(27, 89, 248);
+            this.btnUpdateStatus.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateStatus.FlatAppearance.BorderSize = 0;
+            this.btnUpdateStatus.Location = new System.Drawing.Point(660, 25);
+            this.btnUpdateStatus.Name = "btnUpdateStatus";
+            this.btnUpdateStatus.Size = new System.Drawing.Size(150, 30);
+            this.btnUpdateStatus.Text = "Update Status";
+            this.btnUpdateStatus.UseVisualStyleBackColor = false;
+            this.btnUpdateStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdateStatus.Click += new System.EventHandler(this.btnUpdateStatus_Click);
             
             // pnlTotalOrders
             this.pnlTotalOrders.BackColor = System.Drawing.Color.White;
@@ -199,6 +195,7 @@ namespace Multi_Vendor_System_and_order_management
             this.dgvOrders.Location = new System.Drawing.Point(20, 60);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.Size = new System.Drawing.Size(750, 300);
+            this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             
             // UC_VendorOrders
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,8 +205,7 @@ namespace Multi_Vendor_System_and_order_management
             this.Controls.Add(this.pnlTotalRevenue);
             this.Controls.Add(this.pnlPendingOrders);
             this.Controls.Add(this.pnlTotalOrders);
-            this.Controls.Add(this.btnNewOrder);
-            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.btnUpdateStatus);
             this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.lblTitle);
             this.Name = "UC_VendorOrders";
@@ -228,8 +224,7 @@ namespace Multi_Vendor_System_and_order_management
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
-        private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.Button btnNewOrder;
+        private System.Windows.Forms.Button btnUpdateStatus;
         private System.Windows.Forms.Panel pnlTotalOrders;
         private System.Windows.Forms.Label lblTotalOrdersTitle;
         private System.Windows.Forms.Label lblTotalOrdersCount;

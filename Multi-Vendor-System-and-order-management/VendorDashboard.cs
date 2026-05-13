@@ -12,7 +12,8 @@ namespace Multi_Vendor_System_and_order_management
 {
     public partial class VendorDashboard : Form
     {
-        private int _vendorId;
+        private int               _vendorId;
+        private UC_SearchResults  _searchUC = null;   // live search overlay
 
         public VendorDashboard(int vendorId)
         {
@@ -22,26 +23,40 @@ namespace Multi_Vendor_System_and_order_management
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            ClearSearch();
             MoveIndicator(btnDashboard);
             addUserControl(new UC_VendorDashboard(_vendorId));
         }
 
         private void btnMyProducts_Click(object sender, EventArgs e)
         {
+            ClearSearch();
             MoveIndicator(btnMyProducts);
             addUserControl(new UC_VendorProducts(_vendorId));
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
+            ClearSearch();
             MoveIndicator(btnCustomers);
             addUserControl(new UC_VendorCustomers(_vendorId));
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
+            ClearSearch();
             MoveIndicator(btnOrders);
             addUserControl(new UC_VendorOrders(_vendorId));
+        }
+
+        // Resets the search box and discards the search UC
+        private void ClearSearch()
+        {
+            _searchUC = null;
+            textBox1.TextChanged -= TextBox1_TextChanged;   // suppress event during reset
+            textBox1.Text        = "Search orders, products...";
+            textBox1.ForeColor   = Color.Gray;
+            textBox1.TextChanged += TextBox1_TextChanged;
         }
 
         private void addUserControl(UserControl userControl)
@@ -67,14 +82,15 @@ namespace Multi_Vendor_System_and_order_management
 
         private void VendorDashboard_Load(object sender, EventArgs e)
         {
-            textBox1.Text       = "Search orders, products...";
-            textBox1.ForeColor  = Color.Gray;
-            textBox1.Font       = new Font("Segoe UI", 10F);
+            textBox1.Text        = "Search orders, products...";
+            textBox1.ForeColor   = Color.Gray;
+            textBox1.Font        = new Font("Segoe UI", 10F);
             textBox1.BorderStyle = BorderStyle.FixedSingle;
 
-            textBox1.GotFocus  += RemoveText;
-            textBox1.LostFocus += AddText;
-            textBox1.KeyDown   += TextBox1_KeyDown;
+            textBox1.GotFocus    += RemoveText;
+            textBox1.LostFocus   += AddText;
+            textBox1.KeyDown     += TextBox1_KeyDown;
+            textBox1.TextChanged += TextBox1_TextChanged;   // live search
 
             // Load dashboard as the default view
             btnDashboard_Click(this, EventArgs.Empty);
@@ -95,14 +111,50 @@ namespace Multi_Vendor_System_and_order_management
         private void TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            { e.SuppressKeyPress = true; PerformSearch(); }
+                e.SuppressKeyPress = true;   // search already runs on TextChanged
         }
 
-        private void btnSearch_Click(object sender, EventArgs e) => PerformSearch();
-
-        private void PerformSearch()
+        // ── Live search: fires on every keystroke ─────────────────────────
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            // Future search implementation
+            string raw = textBox1.Text;
+
+            // Ignore placeholder text
+            if (raw == "Search orders, products..." || textBox1.ForeColor == Color.Gray)
+                return;
+
+            PerformSearch(raw.Trim());
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string raw = textBox1.Text;
+            if (raw == "Search orders, products...") return;
+            PerformSearch(raw.Trim());
+        }
+
+        private void PerformSearch(string term = "")
+        {
+            if (string.IsNullOrWhiteSpace(term))
+            {
+                // Empty search → go back to dashboard
+                _searchUC = null;
+                addUserControl(new UC_VendorDashboard(_vendorId));
+                return;
+            }
+
+            if (_searchUC == null)
+            {
+                // First search — create the results UC and show it
+                _searchUC = new UC_SearchResults(_vendorId, term);
+                addUserControl(_searchUC);
+            }
+            else
+            {
+                // Subsequent keystrokes — update in-place without recreating
+                _searchUC._searchTerm = term;
+                _searchUC.RunSearch();
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
